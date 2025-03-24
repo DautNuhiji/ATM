@@ -126,6 +126,8 @@ const cancelTransaction = () => {
 
 //Event Listeners ------------------------------------------------------------
 //Login Screen ----------------------------------------------------------------
+loginError.style.display = "none";
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault(); //mos te behet refresh faqja
   const username = userNameInput.value;
@@ -133,6 +135,7 @@ loginForm.addEventListener("submit", (e) => {
 
   if (username !== "user" || pin !== "1234") {
     loginError.textContent = "Wrong credentials, Try again please";
+    loginError.style.display = "block";
     userNameInput.value = "";
     pinInput.value = "";
   } else {
